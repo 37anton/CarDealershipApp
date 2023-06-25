@@ -5,7 +5,7 @@ namespace App\Data;
 class SearchData
 {
     /**
-     * @ar string
+     * @var string
      */
     public $q = '';
 

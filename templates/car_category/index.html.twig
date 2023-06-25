@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CarCategory index
+{% endblock %}
+
+{% block body %}
+	<h1>CarCategory index</h1>
+
+	<a href="{{ path('app_car_category_new') }}">Create new CarCategory</a>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for car_category in car_categories %}
+				<tr>
+					<td>{{ car_category.id }}</td>
+					<td>{{ car_category.name }}</td>
+					<td>
+						<a href="{{ path('app_car_category_show', {'id': car_category.id}) }}">show</a>
+						<a href="{{ path('app_car_category_edit', {'id': car_category.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="3">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+
+{% endblock %}

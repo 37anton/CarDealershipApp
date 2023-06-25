@@ -8,15 +8,16 @@
 
 	<div class="row">
 		<div class="col-6">
-			<lottie-player src="https://assets2.lottiefiles.com/packages/lf20_gdzapmjf.json" autoplay loop speed="0.6" id="about-lottie"></lottie-player>
+			<lottie-player src="https://assets2.lottiefiles.com/packages/lf20_gdzapmjf.json" autoplay loop speed="0.6" id="about-lottie" style="height: 50vh;"></lottie-player>
 		</div>
 
 		<div class="col-6 d-flex align-items-center">
 			<h1>Welcome to our car dealership, where dreams on wheels come to life !</h1>
 		</div>
 	</div>
+	<hr class="my-4">
 
-	<div class="row">
+	<div class="row text-center">
 		<div class="col-12">
 			<h3>Current weather in Paris :
 				<span id="temperature">{{ data.current_weather.temperature }}</span>°
@@ -24,9 +25,25 @@
 			<h3>Generation time :
 				<span id="generation">{{ data.generationtime_ms }}</span>
 			</h3>
-			<p>This data is used to show that the update of the weather is working well. It is configured in script.js to refresh every 5 seconds.</p>
+			<p class="indications">I also put another data, "generationtime_ms", and I update the temperature and "generationtime_ms" every 5 seconds thanks to script.js, in order to show you that the api call works.</p>
 		</div>
 	</div>
+
+	<hr class="my-4">
+
+	<div class="row">
+
+		<div class="text-center">
+			<div class="col-12">
+				<h2>Are you an admin of the site?</h2>
+				<a href="{{path('app_car_index')}}">I want to manage cars</a>
+				<br>
+				<a href="{{path('app_car_category_index')}}">I want to manage car categories</a>
+			</div>
+		</div>
+	</div>
+
+	<hr class="my-4">
 
 
 {% endblock %}

@@ -1,0 +1,11 @@
+{{ form_start(form) }}
+{# {{ form_widget(form) }} #}
+{{form_row(form.nbSeats)}}
+{{form_row(form.nbDoors)}}
+{{form_row(form.name)}}
+{{form_row(form.cost)}}
+{{form_row(form.pictureUrl)}}
+<p class="indications">Please use https://picsum.photos/500/500 for picture url.</p>
+{{form_row(form.belonging)}}
+<button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
