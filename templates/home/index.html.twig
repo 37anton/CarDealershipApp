@@ -12,20 +12,26 @@
 		</div>
 
 		<div class="col-6 d-flex align-items-center">
-			<h1>Welcome to our car dealership, where dreams on wheels come to life !</h1>
+			<h1>Welcome to our car dealership, where
+				<span class="red-color">dreams</span>
+				on
+				<span class="red-color">wheels</span>
+				come to life !</h1>
 		</div>
 	</div>
 	<hr class="my-4">
 
 	<div class="row text-center">
 		<div class="col-12">
-			<h3>Current weather in Paris :
+			<h3>Current weather in
+				<span class="red-color">Paris</span>
+				:
 				<span id="temperature">{{ data.current_weather.temperature }}</span>°
 			</h3>
 			<h3>Generation time :
 				<span id="generation">{{ data.generationtime_ms }}</span>
 			</h3>
-			<p class="indications">I also put another data, "generationtime_ms", and I update the temperature and "generationtime_ms" every 5 seconds thanks to script.js, in order to show you that the api call works.</p>
+			<p>I also put another data, "generationtime_ms", and I update the temperature and "generationtime_ms" every 5 seconds thanks to script.js, in order to show you that the api call works.</p>
 		</div>
 	</div>
 
@@ -33,12 +39,18 @@
 
 	<div class="row">
 
-		<div class="text-center">
+		<div class="text-center admin">
 			<div class="col-12">
-				<h2>Are you an admin of the site?</h2>
-				<a href="{{path('app_car_index')}}">I want to manage cars</a>
+				<h2>Are you an
+					<span class="red-color">admin</span>
+					of the site?</h2>
+				<a href="{{path('app_car_index')}}" class="fs-4 ">I want to
+					<span class="red-color">manage cars</span>
+				</a>
 				<br>
-				<a href="{{path('app_car_category_index')}}">I want to manage car categories</a>
+				<a href="{{path('app_car_category_index')}}" class="fs-4">I want to manage
+					<span class="red-color">car categories</span>
+				</a>
 			</div>
 		</div>
 	</div>
