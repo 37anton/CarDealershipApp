@@ -27,7 +27,7 @@ Follow the steps below to install and set up the project on your machine:
 1. Clone this GitHub repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/the-repo.git
+   git clone https://github.com/37anton/CarDealershipApp.git
 
 2. Install the dependencies using Composer:
 
