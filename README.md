@@ -36,12 +36,23 @@ Follow the steps below to install and set up the project on your machine:
 
 3. Modify the .env file to configure your environment.
 
-4. Generate fake data from appfixtures.php:
+4. Generate database and make migrations:
+
+   ```bash
+   php bin/console doctrine:database:create
+
+   ```bash
+   php bin/console make:migration
+
+   ```bash
+   php bin/console doctrine:migrations:migrate
+
+5. Generate fake data from appfixtures.php:
 
    ```bash
    php bin/console app:fixtures:load
 
-5. Run the project
+6. Run the project
 
    ```bash
    symfony serve
