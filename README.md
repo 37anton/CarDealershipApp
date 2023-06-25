@@ -41,10 +41,8 @@ Follow the steps below to install and set up the project on your machine:
    ```bash
    php bin/console doctrine:database:create
 
-   ```bash
    php bin/console make:migration
 
-   ```bash
    php bin/console doctrine:migrations:migrate
 
 5. Generate fake data from appfixtures.php:
