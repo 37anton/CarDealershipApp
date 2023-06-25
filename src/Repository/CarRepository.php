@@ -102,7 +102,7 @@ class CarRepository extends ServiceEntityRepository
         return $this->paginatorInterface->paginate(
             $query,
             $search->page,
-            2,
+            20,
             [
                 'wrap-queries' => true // Exemple d'option de pagination
             ]

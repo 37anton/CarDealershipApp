@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!
+{% block title %}Car Dealership Application
 {% endblock %}
 
 {% block body %}
@@ -13,6 +13,18 @@
 
 		<div class="col-6 d-flex align-items-center">
 			<h1>Welcome to our car dealership, where dreams on wheels come to life !</h1>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-12">
+			<h3>Current weather in Paris :
+				<span id="temperature">{{ data.current_weather.temperature }}</span>°
+			</h3>
+			<h3>Generation time :
+				<span id="generation">{{ data.generationtime_ms }}</span>
+			</h3>
+			<p>This data is used to show that the update of the weather is working well. It is configured in script.js to refresh every 5 seconds.</p>
 		</div>
 	</div>
 
