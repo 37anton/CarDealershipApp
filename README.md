@@ -32,16 +32,16 @@ Follow the steps below to install and set up the project on your machine:
 2. Install the dependencies using Composer:
 
    ```bash
-composer install
+   composer install
 
 3. Modify the .env file to configure your environment.
 
 4. Generate fake data from appfixtures.php:
 
    ```bash
-php bin/console app:fixtures:load
+   php bin/console app:fixtures:load
 
 5. Run the project
 
    ```bash
-symfony serve
+   symfony serve
