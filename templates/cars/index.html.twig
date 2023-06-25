@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cars we sold
+{% endblock %}
+
+{% block body %}
+	<div class="container-xl">
+		<div class="row">
+			<div class="col-3">
+				{% include "shared/_filter.html.twig" with {form: form} %}
+			</div>
+			<div class="col-9">
+				<div class="row">
+					{% for car in cars %}
+						<div class="col-3 mb-2">
+							{% include "shared/_card_car.html.twig" with {car: car}  %}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div>
+				{{knp_pagination_render(cars)}}
+			</div>
+		</div>
+
+
+	</div>
+
+{% endblock %}
