@@ -4,20 +4,20 @@ This GitHub repository contains a Symfony project that showcases cars sold by a 
 
 ## Features
 
-- Display of cars sold by the dealership on the homepage.
+- Display of cars sold by the dealership.
 - CRUD system for administrators to manage cars and categories.
 - Filtering of cars using the `findSearch` function in the `CarRepository`.
 - Pagination of results using the KnpPaginationBundle.
 - Addition of fake data for development purposes using the Faker library.
-- API integration with the `CallApiOpenMeteo.php` file and dynamic updates with `script.js`.
+- API integration of open-meteo with the `CallApiOpenMeteo.php` file and dynamic updates with `script.js`.
 
 ## Project Structure
 
 The project is structured as follows:
 
-- The `CarsController` handles the display of the cars sold and can be accessed via the `/cars` route.
+- The `CarsController` handles the display of cars sold and can be accessed via the `/cars` route.
 - The CRUD for cars is generated using the `make:crud` command and is managed by the `CarController`.
-- The CRUD for categories is also managed by a dedicated controller: `CarCategoryController`.
+- The CRUD for categories is also generated using the `make:crud` and is also managed by a dedicated controller: `CarCategoryController`.
 - The `HomeController` controller handles the homepage of the site.
 
 ## Installation
@@ -28,3 +28,20 @@ Follow the steps below to install and set up the project on your machine:
 
    ```bash
    git clone https://github.com/your-username/the-repo.git
+
+2. Install the dependencies using Composer:
+
+   ```bash
+composer install
+
+3. Modify the .env file to configure your environment.
+
+4. Generate fake data from appfixtures.php:
+
+   ```bash
+php bin/console app:fixtures:load
+
+5. Run the project
+
+   ```bash
+symfony serve
