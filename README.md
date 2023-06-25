@@ -1,30 +1,30 @@
-# Readme - Projet Symfony "Concessionnaire de voitures"
+# README - Symfony Project "Car Dealership"
 
-Ce dépôt GitHub contient un projet Symfony permettant de présenter les voitures vendues par un concessionnaire. Il comprend également un système CRUD pour les administrateurs. Voici une brève description des différentes fonctionnalités et composants clés du projet :
+This GitHub repository contains a Symfony project that showcases cars sold by a car dealership. It also includes a CRUD system for administrators. Here's a brief description of the different features and key components of the project:
 
-## Fonctionnalités
+## Features
 
-- Affichage des voitures vendues par le concessionnaire sur la page d'accueil.
-- Système CRUD pour les administrateurs permettant de gérer les voitures et les catégories.
-- Filtrage des voitures grâce à la fonction `findSearch` du `CarRepository`.
-- Pagination des résultats avec le bundle KnpPaginationBundle.
-- Ajout de fausses données à des fins de développement grâce à la librairie Faker.
-- Appel à une API externe via le fichier `CallApiOpenMeteo.php` et mise à jour dynamique avec `script.js`.
+- Display of cars sold by the dealership on the homepage.
+- CRUD system for administrators to manage cars and categories.
+- Filtering of cars using the `findSearch` function in the `CarRepository`.
+- Pagination of results using the KnpPaginationBundle.
+- Addition of fake data for development purposes using the Faker library.
+- API integration with the `CallApiOpenMeteo.php` file and dynamic updates with `script.js`.
 
-## Structure du projet
+## Project Structure
 
-Le projet est structuré de la manière suivante :
+The project is structured as follows:
 
-- Le contrôleur `CarsController` gère l'affichage des voitures vendues et est accessible via la route `/cars`.
-- Le CRUD pour les voitures est généré à l'aide de la commande `make:crud` et est géré par le contrôleur `CarController`.
-- Le CRUD pour les catégories est également géré par un contrôleur dédié : `CarCategoryController`.
-- Le contrôleur `HomeController` gère la page d'accueil du site.
+- The `CarsController` handles the display of the cars sold and can be accessed via the `/cars` route.
+- The CRUD for cars is generated using the `make:crud` command and is managed by the `CarController`.
+- The CRUD for categories is also managed by a dedicated controller: `CarCategoryController`.
+- The `HomeController` controller handles the homepage of the site.
 
 ## Installation
 
-Suivez les étapes ci-dessous pour installer et configurer le projet sur votre machine :
+Follow the steps below to install and set up the project on your machine:
 
-1. Clônez ce dépôt GitHub sur votre machine locale :
+1. Clone this GitHub repository to your local machine:
 
    ```bash
-   git clone https://github.com/votre-utilisateur/le-depot.git
+   git clone https://github.com/your-username/the-repo.git
