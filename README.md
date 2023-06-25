@@ -48,7 +48,7 @@ Follow the steps below to install and set up the project on your machine:
 5. Generate fake data from appfixtures.php:
 
    ```bash
-   php bin/console app:fixtures:load
+   php bin/console doctrine:fixtures:load
 
 6. Run the project
 
