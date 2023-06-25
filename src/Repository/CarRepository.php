@@ -80,19 +80,19 @@ class CarRepository extends ServiceEntityRepository
     public function findSearch(SearchData $search): PaginationInterface
     {
         $query = $this
-            ->createQueryBuilder('p')
-            ->select('c', 'p')
-            ->join('p.belonging', 'c');
+            ->createQueryBuilder('car')
+            ->select('cate', 'car')
+            ->join('car.belonging', 'cate');
 
         if (!empty($search->q)) {
             $query = $query
-                ->andWhere('p.name LIKE :q')
+                ->andWhere('car.name LIKE :q')
                 ->setParameter('q', "%{$search->q}%");
         }
 
         if (!empty($search->carCategories)) {
             $query = $query
-                ->andWhere('c.id IN (:carCategories)')
+                ->andWhere('cate.id IN (:carCategories)')
                 ->setParameter('carCategories', $search->carCategories);
         }
 
@@ -104,7 +104,7 @@ class CarRepository extends ServiceEntityRepository
             $search->page,
             20,
             [
-                'wrap-queries' => true // Exemple d'option de pagination
+                'wrap-queries' => true
             ]
         );
     }
