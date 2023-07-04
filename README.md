@@ -11,6 +11,7 @@ This GitHub repository contains a Symfony project that showcases cars sold by a 
 - Addition of fake data for development purposes using the Faker library.
 - API integration of open-meteo with the `CallApiOpenMeteo.php` file and dynamic updates with `script.js`.
 - With AppFixtures, an admin is created. Email = admin@admin and password = "admin".
+- Ask for appointments requests and admin can manage them
 
 ## Project Structure
 
