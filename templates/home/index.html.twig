@@ -4,6 +4,12 @@
 {% endblock %}
 
 {% block body %}
+	{% for message in app.flashes('success') %}
+		<div class="alert alert-success d-flex align-items-center justify-content-center">
+			{{ message }}
+		</div>
+	{% endfor %}
+
 	<div class="container-xl"></div>
 
 	<div class="row">

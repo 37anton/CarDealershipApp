@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Appointment
+{% endblock %}
+
+{% block body %}
+	<h1>Edit Appointment</h1>
+
+	Email :
+	{{ user.email }}
+
+	{{ include('appointment_crud/_form.html.twig', {'button_label': 'Update'}) }}
+
+	<a href="{{ path('app_appointment_crud_index') }}">back to list</a>
+
+	{{ include('appointment_crud/_delete_form.html.twig') }}
+{% endblock %}

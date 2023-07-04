@@ -4,12 +4,21 @@ namespace App\DataFixtures;
 
 use Faker\Factory;
 use App\Entity\Car;
+use App\Entity\User;
 use App\Entity\CarCategory;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixtures extends Fixture
 {
+    private UserPasswordHasherInterface $passwordEncoder;
+
+    public function __construct(UserPasswordHasherInterface $passwordEncoder)
+    {
+        $this->passwordEncoder = $passwordEncoder;
+    }
+
     public function load(ObjectManager $manager): void
     {
         $faker = Factory::create();
@@ -38,7 +47,13 @@ class AppFixtures extends Fixture
             }
         }
 
-        $manager->flush();
+        $admin = new User();
+        $admin->setEmail('admin@admin');
+        $admin->setRoles(['ROLE_ADMIN']);
+        $admin->setPassword($this->passwordEncoder->hashPassword($admin, 'admin'));
+
+        $manager->persist($admin);
+
 
         $manager->flush();
     }

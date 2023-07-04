@@ -21,9 +21,13 @@ class CarCategory
     #[ORM\OneToMany(mappedBy: 'belonging', targetEntity: Car::class)]
     private Collection $cars;
 
+    #[ORM\OneToMany(mappedBy: 'carCategory', targetEntity: Appointment::class)]
+    private Collection $appointments;
+
     public function __construct()
     {
         $this->cars = new ArrayCollection();
+        $this->appointments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -76,5 +80,35 @@ class CarCategory
     public function __toString()
     {
         return $this->name;
+    }
+
+    /**
+     * @return Collection<int, Appointment>
+     */
+    public function getAppointments(): Collection
+    {
+        return $this->appointments;
+    }
+
+    public function addAppointment(Appointment $appointment): static
+    {
+        if (!$this->appointments->contains($appointment)) {
+            $this->appointments->add($appointment);
+            $appointment->setCarCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAppointment(Appointment $appointment): static
+    {
+        if ($this->appointments->removeElement($appointment)) {
+            // set the owning side to null (unless already changed)
+            if ($appointment->getCarCategory() === $this) {
+                $appointment->setCarCategory(null);
+            }
+        }
+
+        return $this;
     }
 }

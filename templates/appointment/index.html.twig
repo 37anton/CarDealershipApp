@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AppointmentController!
+{% endblock %}
+
+{% block body %}
+	<div class="container-xl">
+		<h1>Create Appointment</h1>
+
+		{{ form_start(form) }}
+		{{ form_row(form.carCategory) }}
+		{{ form_row(form.date) }}
+		{{ form_row(form.content) }}
+
+		<button type="submit" class="btn btn-primary">Create</button>
+		{{ form_end(form) }}
+	</div>
+{% endblock %}

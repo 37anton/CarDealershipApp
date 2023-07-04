@@ -1,9 +1,27 @@
 <nav class="navbar bg-body-tertiary mb-4">
 	<div class="container-fluid">
 		<a href="{{path('app_home')}}" class="navbar-brand">Car Dealership Application</a>
+
+
 		<ul class="navbar-nav">
 			<li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="{{ path('app_cars') }}">Cars we sold</a>
+				<a class="nav-link active" aria-current="page" href="{{ path('app_cars') }}">Cars</a>
 			</li>
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="{{ path('app_appointment')}}">New appointment</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="{{ path('app_my-appointment')}}">My appointments requests</a>
+			</li>
+			{% if app.user %}
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="{{ path('app_logout')}}">Logout</a>
+				</li>
+			{% else %}
+				<a href="{{path('app_login')}}" class="navbar-brand">Login</a>
+				<a href="{{path('app_register')}}" class="navbar-brand">Register</a>
+			{% endif %}
+
+
 		</div>
 	</nav>

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1>My Appointments</h1>
+	<ul>
+		{% for appointment in appointments %}
+			<li>{{ appointment.date|date('Y-m-d H:i:s') }}
+				-
+				{{appointment.status}}
+				-
+				{{ appointment.carCategory }}
+				-
+				{{ appointment.content }}
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
